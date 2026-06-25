@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-label="AWAREmed Health and Wellness Resource Center">
+  <defs>
+    <linearGradient id="blue-g" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#7EC8E3"/>
+      <stop offset="100%" stop-color="#3A8FC7"/>
+    </linearGradient>
+    <linearGradient id="green-g" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A8D97C"/>
+      <stop offset="100%" stop-color="#5AB347"/>
+    </linearGradient>
+    <linearGradient id="brown-g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9A87A"/>
+      <stop offset="100%" stop-color="#9B7545"/>
+    </linearGradient>
+    <filter id="petal-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.18)"/>
+    </filter>
+  </defs>
+
+  <!-- ── Blue petal (top-center, pointing up-right) ── -->
+  <g transform="translate(262,80) rotate(-25)">
+    <ellipse cx="0" cy="0" rx="38" ry="72" fill="url(#blue-g)" filter="url(#petal-shadow)" opacity="0.95"/>
+  </g>
+
+  <!-- ── Green petal (bottom-left, pointing down-left) ── -->
+  <g transform="translate(218,148) rotate(-145)">
+    <ellipse cx="0" cy="0" rx="38" ry="72" fill="url(#green-g)" filter="url(#petal-shadow)" opacity="0.95"/>
+  </g>
+
+  <!-- ── Brown/tan petal (bottom-right, pointing down-right) ── -->
+  <g transform="translate(306,148) rotate(95)">
+    <ellipse cx="0" cy="0" rx="38" ry="72" fill="url(#brown-g)" filter="url(#petal-shadow)" opacity="0.92"/>
+  </g>
+
+  <!-- ── AWARE text (bold blue) ── -->
+  <text x="35" y="268" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="88" fill="#3A8FC7" letter-spacing="-2">AWARE</text>
+
+  <!-- ── MED text (bold green) ── -->
+  <text x="340" y="268" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="88" fill="#5AB347" letter-spacing="-2">MED</text>
+
+  <!-- ── Tagline ── -->
+  <text x="260" y="316" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#7B5535" font-style="italic" letter-spacing="0.5">Health and Wellness Resource Center</text>
+</svg>
