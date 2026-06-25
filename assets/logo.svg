@@ -1,38 +1,67 @@
-svg = '''<svg xmlns="http://www.w3.org/2000/svg" width="240" height="80" viewBox="0 0 240 80">
-<defs>
-<linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-  <stop offset="0%" stop-color="#10A4F4"/>
-  <stop offset="100%" stop-color="#0B8DDB"/>
-</linearGradient>
-<linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-  <stop offset="0%" stop-color="#72D63A"/>
-  <stop offset="100%" stop-color="#55BF28"/>
-</linearGradient>
-<linearGradient id="brownGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-  <stop offset="0%" stop-color="#7B3F00"/>
-  <stop offset="100%" stop-color="#C49A6C"/>
-</linearGradient>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" role="img" aria-label="AWAREmed Health and Wellness Resource Center">
+  <defs>
+    <!-- Blue leaf: light at tip, deeper at base/center -->
+    <linearGradient id="lg-blue" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%"   stop-color="#8DD8F5"/>
+      <stop offset="100%" stop-color="#3AABDA"/>
+    </linearGradient>
+    <!-- Green leaf: light lime at tip, rich green at base -->
+    <linearGradient id="lg-green" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%"   stop-color="#A8E06A"/>
+      <stop offset="100%" stop-color="#58B52E"/>
+    </linearGradient>
+    <!-- Brown leaf: light tan at tip, warm brown at base -->
+    <linearGradient id="lg-brown" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%"   stop-color="#D4B882"/>
+      <stop offset="100%" stop-color="#8B5E30"/>
+    </linearGradient>
+  </defs>
 
-<!-- Top emblem -->
-<g transform="translate(120,16)">
-  <path d="M0,-13 C7,-5 7,5 0,13 C-7,5 -7,-5 0,-13Z" fill="url(#blueGrad)"/>
-  <path d="M-18,8 C-10,4 -3,6 -1,14 C-10,16 -18,12 -18,8Z" fill="#5BC52F"/>
-  <path d="M-10,15 C-5,9 2,8 8,12 C2,18 -5,20 -10,15Z" fill="#B8E28A"/>
-  <path d="M18,8 C10,4 3,6 1,14 C10,16 18,12 18,8Z" fill="#C49A6C"/>
-  <path d="M10,15 C5,9 -2,8 -8,12 C-2,18 5,20 10,15Z" fill="#7B3F00"/>
-</g>
+  <!--
+    Trefoil centered at (240,110).
+    Each leaf: lens/almond shape. Tip at top (0,-75), base blending into center (0,22).
+    Width ~±32 at midpoint. Stacking: green (back), brown (mid), blue (front).
+  -->
 
-<!-- Main text -->
-<text x="28" y="60" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="url(#blueGrad)">AWARE</text>
-<text x="146" y="60" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="300" fill="url(#greenGrad)">MED</text>
+  <!-- Green leaf — lower-left (rotate 240°) -->
+  <g transform="translate(240,110) rotate(240)">
+    <path d="M 0,-75 C 32,-46 34,2 0,22 C -34,2 -32,-46 0,-75 Z"
+          fill="url(#lg-green)"/>
+  </g>
 
-<!-- Tagline -->
-<text x="120" y="72" text-anchor="middle"
-      font-family="Times New Roman, serif" font-size="8"
-      fill="#6F3F1D">Health <tspan font-style="italic">and</tspan> Wellness Resource Center</text>
-</svg>'''
+  <!-- Brown leaf — lower-right (rotate 120°) -->
+  <g transform="translate(240,110) rotate(120)">
+    <path d="M 0,-75 C 32,-46 34,2 0,22 C -34,2 -32,-46 0,-75 Z"
+          fill="url(#lg-brown)"/>
+  </g>
 
-path = Path('/mnt/data/AWAREMED_fully_vectorized_240x80.svg')
-path.write_text(svg)
-print(path)
+  <!-- Blue leaf — top (0°) -->
+  <g transform="translate(240,110)">
+    <path d="M 0,-75 C 32,-46 34,2 0,22 C -34,2 -32,-46 0,-75 Z"
+          fill="url(#lg-blue)"/>
+  </g>
+
+  <!-- AWARE in bold dark blue -->
+  <text x="30" y="248"
+        font-family="'Arial Black','Impact','Helvetica Neue',Arial,sans-serif"
+        font-weight="900"
+        font-size="82"
+        fill="#1A6FAA"
+        letter-spacing="-2">AWARE</text>
+
+  <!-- MED in bold green -->
+  <text x="328" y="248"
+        font-family="'Arial Black','Impact','Helvetica Neue',Arial,sans-serif"
+        font-weight="900"
+        font-size="82"
+        fill="#4EA828"
+        letter-spacing="-2">MED</text>
+
+  <!-- Tagline: "Health and Wellness Resource Center" — "and" italic -->
+  <text x="240" y="291"
+        text-anchor="middle"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="20"
+        fill="#6B4220"
+        letter-spacing="0.5">Health <tspan font-style="italic">and</tspan> Wellness Resource Center</text>
+</svg>
