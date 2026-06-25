@@ -1,79 +1,38 @@
-<svg width="900" height="550" viewBox="0 0 900 550"
-     xmlns="http://www.w3.org/2000/svg">
+svg = '''<svg xmlns="http://www.w3.org/2000/svg" width="240" height="80" viewBox="0 0 240 80">
+<defs>
+<linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%" stop-color="#10A4F4"/>
+  <stop offset="100%" stop-color="#0B8DDB"/>
+</linearGradient>
+<linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%" stop-color="#72D63A"/>
+  <stop offset="100%" stop-color="#55BF28"/>
+</linearGradient>
+<linearGradient id="brownGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%" stop-color="#7B3F00"/>
+  <stop offset="100%" stop-color="#C49A6C"/>
+</linearGradient>
+</defs>
 
-  <!-- Background -->
-  <rect width="100%" height="100%" fill="white"/>
+<!-- Top emblem -->
+<g transform="translate(120,16)">
+  <path d="M0,-13 C7,-5 7,5 0,13 C-7,5 -7,-5 0,-13Z" fill="url(#blueGrad)"/>
+  <path d="M-18,8 C-10,4 -3,6 -1,14 C-10,16 -18,12 -18,8Z" fill="#5BC52F"/>
+  <path d="M-10,15 C-5,9 2,8 8,12 C2,18 -5,20 -10,15Z" fill="#B8E28A"/>
+  <path d="M18,8 C10,4 3,6 1,14 C10,16 18,12 18,8Z" fill="#C49A6C"/>
+  <path d="M10,15 C5,9 -2,8 -8,12 C-2,18 5,20 10,15Z" fill="#7B3F00"/>
+</g>
 
-  <!-- Top Symbol -->
-  <g transform="translate(450,120)">
+<!-- Main text -->
+<text x="28" y="60" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="url(#blueGrad)">AWARE</text>
+<text x="146" y="60" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="300" fill="url(#greenGrad)">MED</text>
 
-    <!-- Blue Top Leaf -->
-    <path d="
-      M0,-60
-      C-35,-20 -35,30 -10,70
-      C5,40 10,0 0,-60 Z"
-      fill="#66B9E8"/>
+<!-- Tagline -->
+<text x="120" y="72" text-anchor="middle"
+      font-family="Times New Roman, serif" font-size="8"
+      fill="#6F3F1D">Health <tspan font-style="italic">and</tspan> Wellness Resource Center</text>
+</svg>'''
 
-    <path d="
-      M0,-60
-      C35,-20 35,30 10,70
-      C-5,40 -10,0 0,-60 Z"
-      fill="#0094E0"/>
-
-    <!-- Left Green Leaves -->
-    <g transform="translate(-95,105) rotate(-25)">
-      <path d="
-        M0,0
-        C-45,-5 -75,25 -85,60
-        C-40,55 -5,35 0,0 Z"
-        fill="#58C12E"/>
-
-      <path d="
-        M0,0
-        C-20,25 -15,55 15,80
-        C40,50 35,15 0,0 Z"
-        fill="#B9E28A"/>
-    </g>
-
-    <!-- Right Brown Leaves -->
-    <g transform="translate(95,105) rotate(25)">
-      <path d="
-        M0,0
-        C45,-5 75,25 85,60
-        C40,55 5,35 0,0 Z"
-        fill="#B98A5A"/>
-
-      <path d="
-        M0,0
-        C20,25 15,55 -15,80
-        C-40,50 -35,15 0,0 Z"
-        fill="#7A3D00"/>
-    </g>
-  </g>
-
-  <!-- Main Logo Text -->
-  <text x="450" y="360"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="110"
-        font-weight="700">
-
-    <tspan fill="#0094E0">AWARE</tspan>
-    <tspan fill="#58C12E">MED</tspan>
-
-  </text>
-
-  <!-- Tagline -->
-  <text x="450" y="445"
-        text-anchor="middle"
-        font-family="Georgia, Times New Roman, serif"
-        font-size="40"
-        fill="#6B3A16">
-
-    Health
-    <tspan font-style="italic"> and </tspan>
-    Wellness Resource Center
-
-  </text>
-
-</svg>
+path = Path('/mnt/data/AWAREMED_fully_vectorized_240x80.svg')
+path.write_text(svg)
+print(path)
