@@ -215,22 +215,29 @@ ul { list-style: none; }
   background: var(--yellow); color: var(--green-dark);
 }
 
-.lang-switcher-header {
-  display: flex; align-items: center; gap: 4px;
+/* ── Header Language Switcher (beside CTA button) ── */
+.header-lang {
+  display: flex; align-items: center; gap: 2px;
   background: var(--green-light); border-radius: var(--radius-full);
-  padding: 4px 6px; border: 1px solid rgba(74,124,63,.2);
+  padding: 3px 5px; border: 1px solid rgba(74,124,63,.25);
+  flex-shrink: 0;
 }
 .lang-btn-header {
-  padding: 5px 12px; border-radius: var(--radius-full); border: none;
-  background: transparent; color: var(--text-muted); font-size: 0.74rem;
+  padding: 5px 11px; border-radius: var(--radius-full); border: none;
+  background: transparent; color: var(--text-muted); font-size: 0.72rem;
   font-weight: 800; cursor: pointer; transition: all var(--transition);
   font-family: var(--font-sans); letter-spacing: 0.04em;
-  display: flex; align-items: center; gap: 4px;
+  display: flex; align-items: center; gap: 3px; white-space: nowrap;
 }
-.lang-btn-header.active, .lang-btn-header:hover {
-  background: var(--green); color: white;
+.lang-btn-header.active {
+  background: var(--brand-green); color: white;
+}
+.lang-btn-header:hover:not(.active) {
+  background: rgba(74,124,63,.12); color: var(--green-dark);
 }
 .lang-flag { font-size: 0.9rem; }
+/* Legacy — hide old utility-bar switcher remnants if any */
+.lang-switcher-header { display: none; }
 
 /* ── Utility Bar ── */
 .utility-bar {
@@ -255,7 +262,11 @@ ul { list-style: none; }
   padding: 8px 0; box-shadow: 0 4px 40px rgba(26,46,26,.12);
   background: rgba(255,255,255,.98);
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+/* Group lang switcher + CTA together at the right end */
+.header-inner .header-lang + .header-cta,
+.header-inner > .header-lang { margin-left: auto; }
+.header-inner .primary-nav + .header-lang { margin-left: auto; }
 
 /* Logo */
 .brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
